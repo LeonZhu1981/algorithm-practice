@@ -12,73 +12,75 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-		<junit.jupiter.version>5.4.0</junit.jupiter.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+    <junit.jupiter.version>5.4.0</junit.jupiter.version>
   </properties>
 
   <dependencies>
     <dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>${junit.jupiter.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-params</artifactId>
-			<version>${junit.jupiter.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>${junit.jupiter.version}</version>
-			<scope>test</scope>
-		</dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
-		<plugins>
-			<!-- JUnit 5 requires Surefire version 2.22.1 or higher -->
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.1</version>
-			</plugin>
+    <plugins>
+      <!-- JUnit 5 requires Surefire version 2.22.1 or higher -->
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.1</version>
+      </plugin>
+
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.7.9</version>
         <executions>
-            <execution>
-                <goals>
-                    <goal>prepare-agent</goal>
-                </goals>
-            </execution>
-            <execution>
-                <id>generate-code-coverage-report</id>
-                <phase>test</phase>
-                <goals>
-                    <goal>report</goal>
-                </goals>
-            </execution>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>generate-code-coverage-report</id>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
         </executions>
       </plugin>
+
       <plugin>
-      <!-- Build an executable JAR -->
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-jar-plugin</artifactId>
-      <version>3.1.0</version>
-      <configuration>
-        <archive>
-          <manifest>
-            <addClasspath>true</addClasspath>
-            <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>net.zhuxiaodong.algorithm.practice.array.App</mainClass>
-          </manifest>
-        </archive>
-      </configuration>
-    </plugin>
-		</plugins>
+        <!-- Build an executable JAR -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+              <mainClass>net.zhuxiaodong.algorithm.practice.array.MyGenericArrayList</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
 	</build>
 </project>
