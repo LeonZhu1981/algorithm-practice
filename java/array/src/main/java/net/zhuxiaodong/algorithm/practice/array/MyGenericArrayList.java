@@ -13,6 +13,7 @@ import java.lang.StringBuilder;
  *
  * @author  leon zhu
  * @version %I%, %G%
+ * @see java standard ArrayList http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java
  */
 public class MyGenericArrayList<T> {
     private int size;
